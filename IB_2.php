@@ -19,8 +19,8 @@ set_exception_handler('exception_handler');
 //start
 $iB = new IntelligentBee(array(-2,6,12, 7, 101, 67));
 $iB->processOddNumbers();
-$a = $iB->processEvenNumbers();
-var_dump($a);
+$sum = $iB->processEvenNumbers();
+echo PHP_EOL.'Sum of common factors: ' . $sum . PHP_EOL;
 //end
 
 
@@ -105,7 +105,7 @@ class IntelligentBee{
 				$commonFactors = $this->checkIfHasCommonFactors($evenNumber, $commonFactors);
 		}
 
-		return $commonFactors;
+		return array_sum($commonFactors);
 	}
 
 	protected function splitNumbers(array $arrayOfIntegers){
